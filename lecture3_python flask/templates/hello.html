@@ -8,4 +8,13 @@ Hello!
 {% block body %}
   Hello,{{name}}!
  <!--<a href="{{ url_for('index') }}">Go back...</a>-->
+ this is your note
+
+ <br>
+ <br>
+ <ul>
+   {% for note in notes %}
+      <li>{{ note }}</li>
+   {% endfor %}
+ </ul>
  {% endblock %}

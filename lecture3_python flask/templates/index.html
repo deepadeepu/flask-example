@@ -1,20 +1,38 @@
 {% extends "layout.html "%}
 
 {% block heading %}
-     First page
+     Notes
 {% endblock %}
 
 
 {% block body %}
+<ul>
+  {% for note in notes %}
+     <li>{{ note }}</li>
+  {% endfor %}
+</ul>
+<div>
+<form  action="{{url_for('index')}}" method="post">
+  <input type="text" name="note" placeholder="Enter Your Note here">
+  <button>Add Note</button>
+</form>
+</div>
+<br>
+<br>
+<div>
 <form  action="{{url_for('hello')}}" method="post">
   <input type="text" name="name" placeholder="Enter Your Name" value="">
   <button>Submit</button>
 </form>
- <a href="{{ url_for('more') }}">See more...</a>
+<br>
+<br>
+ <a href="{{ url_for('more') }}">See more...</a></div>
  {% endblock %}
 
 
 <!-- <!DOCTYPE html>
+
+
 <html>
   <head>
     <title>MY website</title>
